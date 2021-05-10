@@ -9,17 +9,18 @@ class TopNavigation extends Component {
           super();
           this.state={
                navBarTitle:"navTitle",
-               navBarLogo: [whiteLogo] // object
+               navBarLogo: [whiteLogo], // object
+               navBarBack:"navBackground"
           }
      }
 
      onScroll=()=>{
           if(window.scrollY>100){
-               this.setState({navBarTitle:'navTitleScroll',navBarLogo:[blackLogo]})
+               this.setState({navBarTitle:'navTitleScroll',navBarLogo:[blackLogo],navBarBack:'navBackgroundScroll'})
 
           }else if(window.scrollY<100){
 
-               this.setState({navBarTitle:'navTitle',navBarLogo:[whiteLogo]})
+               this.setState({navBarTitle:'navTitle',navBarLogo:[whiteLogo],navBarBack:'navBackground'})
           }
      }
 
@@ -32,7 +33,7 @@ class TopNavigation extends Component {
           return (
                 <Fragment>
   
-      <Navbar collapseOnSelect fixed="top" expand="lg" bg="dark" variant="dark">
+      <Navbar className={this.state.navBarBack} collapseOnSelect fixed="top" expand="lg" variant="dark">
   <Navbar.Brand className={this.state.navBarTitle} href="#home"> <img src={this.state.navBarLogo} /> </Navbar.Brand>
   <Navbar.Toggle aria-controls="responsive-navbar-nav" />
   <Navbar.Collapse id="responsive-navbar-nav">

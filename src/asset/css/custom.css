@@ -95,3 +95,17 @@
      font-weight: 700;
      font-size: 30px;
 }
+.navBackground{
+     -webkit-transition: background-color 400ms linear;
+     -moz-transition: background-color 400ms linear;
+     -o-transition: background-color 400ms linear;
+     transition: background-color 400ms linear;
+     background-color: rgba(00, 00, 00, 0.0)!important;
+}
+.navBackgroundScroll{
+     -webkit-transition: background-color 400ms linear;
+     -moz-transition: background-color 400ms linear;
+     -o-transition: background-color 400ms linear;
+     transition: background-color 400ms linear;
+     background-color: #ffffff;
+}
