@@ -14,7 +14,7 @@
 }
 
 .topContent{
-     margin-top: 10em;
+     margin-top: 15em;
 }
 .topTitle{
      font-family: 'Montserrat',sans-serif;
@@ -108,4 +108,18 @@
      -o-transition: background-color 400ms linear;
      transition: background-color 400ms linear;
      background-color: #ffffff;
+}
+.navItem{
+     text-decoration: none !important;
+     font-family: 'Montserrat',sans-serif;
+     color: #ffffff !important;
+     font-weight: 700;
+     font-size: 16px;
+}
+.navItemScroll{
+     text-decoration: none !important;
+     font-family: 'Montserrat',sans-serif;
+     color: #000000 !important;
+     font-weight: 700;
+     font-size: 16px;
 }

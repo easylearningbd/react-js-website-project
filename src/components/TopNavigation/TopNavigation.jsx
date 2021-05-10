@@ -10,17 +10,18 @@ class TopNavigation extends Component {
           this.state={
                navBarTitle:"navTitle",
                navBarLogo: [whiteLogo], // object
-               navBarBack:"navBackground"
+               navBarBack:"navBackground",
+               navBarItem:"navItem"
           }
      }
 
      onScroll=()=>{
           if(window.scrollY>100){
-               this.setState({navBarTitle:'navTitleScroll',navBarLogo:[blackLogo],navBarBack:'navBackgroundScroll'})
+               this.setState({navBarTitle:'navTitleScroll',navBarLogo:[blackLogo],navBarBack:'navBackgroundScroll',navBarItem:'navItemScroll'})
 
           }else if(window.scrollY<100){
 
-               this.setState({navBarTitle:'navTitle',navBarLogo:[whiteLogo],navBarBack:'navBackground'})
+               this.setState({navBarTitle:'navTitle',navBarLogo:[whiteLogo],navBarBack:'navBackground',navBarItem:'navItem'})
           }
      }
 
@@ -41,12 +42,12 @@ class TopNavigation extends Component {
       
     </Nav>
     <Nav>
-      <Nav.Link href="#deets">HOME</Nav.Link>
-      <Nav.Link href="#deets">ABOUT</Nav.Link>
-      <Nav.Link href="#deets">SERVICE</Nav.Link>
-      <Nav.Link href="#deets">COURSES</Nav.Link>
-      <Nav.Link href="#deets">PORTFOLIO</Nav.Link>
-      <Nav.Link href="#deets">CONTACT US</Nav.Link>
+      <Nav.Link className={this.state.navBarItem} href="#deets">HOME</Nav.Link>
+      <Nav.Link className={this.state.navBarItem} href="#deets">ABOUT</Nav.Link>
+      <Nav.Link className={this.state.navBarItem}  href="#deets">SERVICE</Nav.Link>
+      <Nav.Link className={this.state.navBarItem} href="#deets">COURSES</Nav.Link>
+      <Nav.Link className={this.state.navBarItem} href="#deets">PORTFOLIO</Nav.Link>
+      <Nav.Link className={this.state.navBarItem} href="#deets">CONTACT US</Nav.Link>
      
        
     </Nav>
