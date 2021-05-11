@@ -191,3 +191,16 @@
      box-shadow: 0 13px 30px -5px;
      
 }
+.courseImg{
+     width: 100%;
+}
+.courseViewMore{
+     color: #051b35;
+     font-family: 'Montserrat',sans-serif;
+     font-weight: 600;
+     font-size: 15px;
+     text-decoration: none;
+}
+.courseViewMore:hover{
+     text-decoration: none;
+}
