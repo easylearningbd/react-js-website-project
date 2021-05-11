@@ -39,8 +39,6 @@ class Analysis extends Component {
                <Bar dataKey="Projects" fill={blue}>
 
                </Bar>
-
-
                </BarChart>
                </ResponsiveContainer>
                

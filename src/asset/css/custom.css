@@ -123,3 +123,17 @@
      font-weight: 700;
      font-size: 16px;
 }
+.summaryBanner{
+     background-image: url("../image/summary.jpg");
+     min-height: 400px;
+     background-attachment: fixed;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+.summaryBannerOverlay{
+     position: absolute;
+     min-height: 400px;
+     width: 100%;
+     background: rgba(27, 31, 92, 0.7);
+}
