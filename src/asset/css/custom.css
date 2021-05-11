@@ -152,3 +152,20 @@
 .countSection{
      margin-top: 20%;
 }
+.cardTitle{
+     color: #000000;
+     font-family: 'Montserrat',sans-serif;
+     font-weight: 700;
+     font-size: 15px;
+}
+.cardSubTitle{
+     color: #000000;
+     font-family: 'Raleway',sans-serif;
+     font-weight: 600;
+     font-size: 14px;
+}
+.workCard{
+     margin-top: 25%;
+     padding: 10px 10px 10px 10px;
+     border-radius: 3px;
+}
