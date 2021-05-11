@@ -5,6 +5,8 @@ import {faCheckSquare} from '@fortawesome/free-solid-svg-icons'
 import {faGlobe} from '@fortawesome/free-solid-svg-icons'
 import {faLaptop} from '@fortawesome/free-solid-svg-icons'
 import {faStar} from '@fortawesome/free-solid-svg-icons'
+import CountUp from 'react-countup'
+import VisibilitySensor from 'react-visibility-sensor'
 
 class Summary extends Component {
      render() {
@@ -20,21 +22,45 @@ class Summary extends Component {
           <Row className="countSection">
                <Col>
                <FontAwesomeIcon className="iconProject" icon={faGlobe} />
-               <h1 className="countNumber">35000 </h1>
+               <h1 className="countNumber">
+               
+               <CountUp start={0} end={35000}>
+  {({ countUpRef, start }) => (
+     <VisibilitySensor onChange={start} delayedCall>
+      <span ref={countUpRef} />
+      </VisibilitySensor>   
+  )}
+</CountUp>  
+ </h1> 
                <h4 className="countTitle">Students Worldwide</h4>
                <hr className="bg-white w-25" />
                </Col>
 
                <Col>
                <FontAwesomeIcon className="iconProject" icon={faLaptop} />
-               <h1 className="countNumber">22 </h1>
+               <h1 className="countNumber">
+               <CountUp start={0} end={22}>
+  {({ countUpRef, start }) => (
+     <VisibilitySensor onChange={start} delayedCall>
+      <span ref={countUpRef} />
+      </VisibilitySensor>   
+  )}
+</CountUp>  
+               </h1>
                <h4 className="countTitle">Courses Published</h4>
                <hr className="bg-white w-25" />
                </Col>
 
                <Col>
                <FontAwesomeIcon className="iconProject" icon={faStar} />
-               <h1 className="countNumber">3000 </h1>
+               <h1 className="countNumber">
+               <CountUp start={0} end={3000}>
+  {({ countUpRef, start }) => (
+     <VisibilitySensor onChange={start} delayedCall>
+      <span ref={countUpRef} />
+      </VisibilitySensor>   
+  )}
+</CountUp>   </h1>
                <h4 className="countTitle">Student Reviews</h4>
                <hr className="bg-white w-25" />
                </Col>
