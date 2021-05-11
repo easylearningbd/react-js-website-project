@@ -137,3 +137,18 @@
      width: 100%;
      background: rgba(27, 31, 92, 0.7);
 }
+.countNumber{
+     color: #ffffff;
+     font-family: 'Montserrat',sans-serif;
+     font-weight: 700;
+     font-size: 40px;
+}
+.countTitle{
+     color: #ffd900;
+     font-family: 'Raleway',sans-serif;
+     font-weight: 600;
+     font-size: 22px;
+}
+.countSection{
+     margin-top: 20%;
+}
