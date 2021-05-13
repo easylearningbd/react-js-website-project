@@ -204,3 +204,13 @@
 .courseViewMore:hover{
      text-decoration: none;
 }
+.videoCard{
+     box-shadow: 0 13px 10px -5px;
+     padding:8rem  3rem 8rem 3rem;
+     background-color: #051b35;
+     margin: 20px auto;
+     border-radius: 5px;
+}
+.videText{
+     margin-top: 2%;
+}
