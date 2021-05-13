@@ -302,3 +302,31 @@
      font-size: 22px;
      font-weight: 600;
 }
+.social-container{
+     margin-top: 30px;
+}
+a.social{
+     margin: 0 1rem;
+     transition: transform 250ms;
+     display: inline-block;
+}
+a.social:hover{
+     transform: translateY(-2px);
+}
+a.facebook{
+     color: #ffffff;
+}
+a.youtube{
+     color: #ffffff;
+}
+a.twitter{
+     color: #ffffff;
+}
+.footerDescription{
+     color: #e9e8e8;
+     margin-top: 1rem;
+     font-family: 'Raleway',sans-serif;
+     font-size: 15px;
+     font-weight: 400;
+
+}
