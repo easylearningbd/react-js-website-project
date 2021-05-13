@@ -17,6 +17,7 @@
     "react-scripts": "4.0.3",
     "react-visibility-sensor": "^5.1.1",
     "recharts": "^2.0.9",
+    "video-react": "^0.14.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
