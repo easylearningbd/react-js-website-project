@@ -327,6 +327,36 @@ a.twitter{
      margin-top: 1rem;
      font-family: 'Raleway',sans-serif;
      font-size: 15px;
-     font-weight: 400;
+     font-weight: 600;
+
+}
+.footerLink{
+     text-decoration: none;
+     font-family: 'Raleway',sans-serif;
+     font-size: 14px;
+     font-weight: 600;
+     color: #ffffff;
+
+}
+.footerLink:hover{
+     text-decoration: none; 
+     color: #ffd900;
+
+}
+.copyrightSection{
+     padding: 20px 20px 20px 20px;
+     background-color: #002c61;
+}
+.copyrightlink{
+     text-decoration: none;
+     color: #ffffff;
+     font-family: 'Raleway',sans-serif;
+     font-size: 15px;
+     font-weight: 600;
+
+}
+.copyrightlink:hover{
+     text-decoration: none;
+     color: #ffffff;    
 
 }

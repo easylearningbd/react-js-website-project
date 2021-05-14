@@ -44,13 +44,32 @@ class Footer extends Component {
 
      <Col lg="3" md={6} sm={12} className="p-5 text-justify">
      <h2 className="footerName text-center">Information </h2>
+     <a className="footerLink" href="#">About Me </a> <br></br>
+     <a  className="footerLink" href="#">Company Profile </a> <br></br>
+     <a className="footerLink" href="#">Contact Us  </a> <br></br>
      </Col>
 
      <Col lg="3" md={6} sm={12} className="p-5 text-justify">
      <h2 className="footerName text-center">Policy  </h2>
+     <a className="footerLink" href="#">Fefund Policy  </a> <br></br>
+     <a className="footerLink" href="#">Trems And Condition  </a> <br></br>
+     <a className="footerLink" href="#">Privaci Policy   </a> <br></br>
      </Col>
                          </Row>
                     </Container>
+
+
+      <Container fluid={true} className="text-center copyrightSection">
+<a className="copyrightlink" href="#">© Copyright 2016 by easy Learning, All Rights Reserved</a>
+               </Container>
+
+
+
+
+
+
+
+
 
                </Fragment>
           )
