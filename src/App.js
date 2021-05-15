@@ -1,12 +1,13 @@
 import React from 'react';
-import AboutPage from './pages/AboutPage';
+import AllCorusePage from './pages/AllCorusePage';
+ 
  
 
 function App() {
   return (
     <div>
     
-     <AboutPage />
+      <AllCorusePage />
       
     </div>
   );
