@@ -33,7 +33,7 @@ class Footer extends Component {
 
 
      <Col lg="3" md={6} sm={12} className="p-5 text-justify">
-     <h2 className="footerName text-center">Address </h2>
+     <h2 className="footerName">Address </h2>
      <p className="footerDescription">
           6522 Baltimore National Pike CatonsVille, Califonia USA <br></br>
           <FontAwesomeIcon icon={faEnvelope}  /> Email : Support@ele.com<br></br>
@@ -43,14 +43,14 @@ class Footer extends Component {
 
 
      <Col lg="3" md={6} sm={12} className="p-5 text-justify">
-     <h2 className="footerName text-center">Information </h2>
+     <h2 className="footerName">Information </h2>
      <a className="footerLink" href="#">About Me </a> <br></br>
      <a  className="footerLink" href="#">Company Profile </a> <br></br>
      <a className="footerLink" href="#">Contact Us  </a> <br></br>
      </Col>
 
      <Col lg="3" md={6} sm={12} className="p-5 text-justify">
-     <h2 className="footerName text-center">Policy  </h2>
+     <h2 className="footerName">Policy  </h2>
      <a className="footerLink" href="#">Fefund Policy  </a> <br></br>
      <a className="footerLink" href="#">Trems And Condition  </a> <br></br>
      <a className="footerLink" href="#">Privaci Policy   </a> <br></br>
