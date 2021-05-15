@@ -1,19 +1,12 @@
 import React from 'react';
-import ContactSec from './components/ContactSec/ContactSec';
-import AllCorusePage from './pages/AllCorusePage';
-import AllServicePage from './pages/AllServicePage';
-import ContactPage from './pages/ContactPage';
-import PortfolioPage from './pages/PortfolioPage';
- 
- 
+import {BrowserRouter} from "react-router-dom"
+import AppRouter from './router/AppRouter';
 
 function App() {
   return (
-    <div>
-    
-    <AllServicePage />
-      
-    </div>
+     <BrowserRouter>
+     <AppRouter />
+     </BrowserRouter>
   );
 }
 
