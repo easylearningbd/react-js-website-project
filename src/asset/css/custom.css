@@ -360,3 +360,28 @@ a.twitter{
      color: #ffffff;    
 
 }
+
+.topFixedPage{
+     background-image: url("../image/page.png");
+     min-height: 250px;
+     background-attachment: fixed;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+.topPageOverlay{
+     position: absolute;
+     min-height: 250px;
+     width: 100%;
+     background: rgba(19, 1, 102, 0.7);
+}
+
+.topContentPage{
+     margin-top: 8em;
+}
+.topPageTitle{
+     font-family: 'Montserrat',sans-serif;
+     font-weight: 700;
+     color: #ffee00;
+     font-size: 40px;
+}
