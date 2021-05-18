@@ -6,6 +6,7 @@ import AllServicePage from '../pages/AllServicePage';
 import ContactPage from '../pages/ContactPage';
 import HomePage from '../pages/HomePage';
 import PortfolioPage from '../pages/PortfolioPage';
+import RefundPage from '../pages/RefundPage';
 
 class AppRouter extends Component {
      render() {
@@ -18,7 +19,9 @@ class AppRouter extends Component {
           <Route exact path="/course" component={AllCorusePage} />
           <Route exact path="/porfolio" component={PortfolioPage} />
           <Route exact path="/about" component={AboutPage} />
-          <Route exact path="/contact" component={ContactPage} /> 
+          <Route exact path="/contact" component={ContactPage} />
+
+           <Route exact path="/refund" component={RefundPage} />  
            
         </Switch>
 
