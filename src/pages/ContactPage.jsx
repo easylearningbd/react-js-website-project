@@ -8,7 +8,7 @@ import TopNavigation from '../components/TopNavigation/TopNavigation'
      render() {
           return (
               <Fragment>
-                   <TopNavigation />
+                  <TopNavigation title="Contact Us" /> 
                    <PageTop pagetitle="Contact Us" />
                    <ContactSec />
                    <Footer />

@@ -16,7 +16,7 @@ class HomePage extends Component {
           return (
              <Fragment>
 
-      <TopNavigation />
+      <TopNavigation title="Easy Learning Page" /> 
       <TopBanner />
       <Services />
       <Analysis />

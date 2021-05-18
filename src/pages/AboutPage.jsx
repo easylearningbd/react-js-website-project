@@ -9,7 +9,7 @@ import TopNavigation from '../components/TopNavigation/TopNavigation'
      render() {
           return (
                 <Fragment>
-                 <TopNavigation />  
+                 <TopNavigation title="About Us" />  
                  <PageTop pagetitle="About Us" />  
                  <AboutMe />
                  <AboutDescription />
