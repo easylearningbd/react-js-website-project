@@ -433,3 +433,21 @@ a.twitter{
      color: #051b35;
      font-size: 40px;
  }
+
+.intro-footer {
+     padding: 30px 30px 10px;
+     border-radius: 0 0 7px 7px;
+ }
+ .bg-base {
+     background: #fdc800;
+ }
+ .sideImg{
+      margin-top: -15px;
+ }
+ .homeIntro{
+     font-family: 'Montserrat',sans-serif;
+     font-weight: 700;
+     color: #051b35;
+     font-size: 16px;
+
+ }

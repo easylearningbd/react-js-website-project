@@ -19,7 +19,7 @@ class Services extends Component {
                   <h2 className="serviceName">Ecommerce</h2>
                   <p className="serviceDescription">I will design and develop ecommerce online store website.</p>
               </div>
-               </Col> 
+               </Col>  
 
                <Col lg={4} md={6} sm={12}>
                <div className="serviceCard text-center">
