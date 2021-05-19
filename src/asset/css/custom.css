@@ -108,6 +108,7 @@
      -o-transition: background-color 400ms linear;
      transition: background-color 400ms linear;
      background-color: #ffffff;
+     box-shadow: 0 0 8px 0 rgba(0, 115, 230, 0.3);
 }
 .navItem{
      text-decoration: none !important;
