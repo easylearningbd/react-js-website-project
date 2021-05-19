@@ -7,11 +7,9 @@ import {faClock} from '@fortawesome/free-solid-svg-icons'
 import {faClipboard} from '@fortawesome/free-solid-svg-icons'
 import {faClone} from '@fortawesome/free-solid-svg-icons'
 import {faTags} from '@fortawesome/free-solid-svg-icons'
- 
- 
-
-
-
+import 'video-react/dist/video-react.css'
+import { Player, BigPlayButton } from 'video-react'
+  
  class CourseDetails extends Component {
      render() {
           return (
@@ -33,7 +31,7 @@ import {faTags} from '@fortawesome/free-solid-svg-icons'
 
                             <Col lg={4} md={6} sm={12}>
                          
-      <div class="widget_feature">
+      <div className="widget_feature">
 <h4 class="widget-title text-center">Course Features</h4>
 <hr />
 <ul>
@@ -55,19 +53,56 @@ import {faTags} from '@fortawesome/free-solid-svg-icons'
 <Button variant="warning">ENROLL COURSE</Button>
  
 </div>
-</div>        
-
-
-
-
-
-                            </Col>
-
-
-
+</div>     
+                            </Col> 
 
                        </Row>
                   </Container>
+
+
+<br></br><br></br>
+               <Container>
+                    <Row>
+                         <Col lg={6} md={6} sm={12}>
+
+         <div className="widget_feature">
+      <h1 className="coruseDetailsText"> Skill You Need  </h1>   
+      <hr />
+      <ul>
+           <li><FontAwesomeIcon className="iconBullent" icon={faCheckSquare} /> Metus interdum metus</li>
+           <li><FontAwesomeIcon className="iconBullent" icon={faCheckSquare} /> Ligula cur maecenas</li>
+
+           <li><FontAwesomeIcon className="iconBullent" icon={faCheckSquare} /> Metus interdum metus</li>
+
+           <li><FontAwesomeIcon className="iconBullent" icon={faCheckSquare} />Ligula cur maecenass</li>
+
+           <li><FontAwesomeIcon className="iconBullent" icon={faCheckSquare} /> Metus interdum metus</li>
+ 
+           </ul>           
+             </div>
+             </Col>
+
+
+           <Col lg={6} md={6} sm={12}>
+
+           <Player src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4">
+      <BigPlayButton position="center" />
+    </Player>
+                         </Col>
+
+                    </Row>
+               </Container>
+
+
+
+
+
+
+
+
+
+
+
              </Fragment>
           )
      }
