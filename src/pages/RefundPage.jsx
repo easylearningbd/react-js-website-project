@@ -5,6 +5,9 @@ import RefundDescription from '../components/RefundDescription/RefundDescription
 import TopNavigation from '../components/TopNavigation/TopNavigation'
 
 class RefundPage extends Component {
+     componentDidMount(){
+          window.scroll(0,0)
+      }
      render() {
           return (
               <Fragment>

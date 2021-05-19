@@ -5,6 +5,9 @@ import ProjectDetails from '../components/ProjectDetails/ProjectDetails'
 import TopNavigation from '../components/TopNavigation/TopNavigation'
 
 class ProjectDetailPage extends Component {
+     componentDidMount(){
+          window.scroll(0,0)
+      }
      render() {
           return (
                <Fragment>

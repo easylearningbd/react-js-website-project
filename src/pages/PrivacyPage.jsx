@@ -5,6 +5,9 @@ import PrivacyDescription from '../components/PrivacyDescription/PrivacyDescript
 import TopNavigation from '../components/TopNavigation/TopNavigation'
 
  class PrivacyPage extends Component {
+     componentDidMount(){
+          window.scroll(0,0)
+      }
      render() {
           return (
                <Fragment>
