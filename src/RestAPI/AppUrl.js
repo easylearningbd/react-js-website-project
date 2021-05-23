@@ -1,7 +1,7 @@
 class AppUrl {
 
      // static BaseURL = 'http://127.0.0.1:8000/api';
-     static BaseURL = 'https://rapi.fgclbd.com/api';
+      static BaseURL = 'https://rapi.fgclbd.com/api';
 
      static HomeTopTitle = this.BaseURL+'/homepage/title';
      static HomeTechDesc = this.BaseURL+'/techhome';
