@@ -1,19 +1,23 @@
 import React, { Component, Fragment } from 'react'
 import { Col, Container, Row, Button } from 'react-bootstrap'
 import axios from 'axios';
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
 
 class TopBanner extends Component {
 
+     constructor(){
+          super();
+          this.state={
+               title:"",
+               subtitle:""
+          }
+     }
+
      componentDidMount(){
-   axios.get('http://127.0.0.1:8000/api/homepage/title')
-  .then(function (response) {    
-    console.log(response.data);
-  })
-  .catch(function (error) {
-     
-    console.log(error);
-  })
-  
+          RestClient.GetRequest(AppUrl.HomeTopTitle).then(result=>{
+               this.setState({title:result[0]['home_title'],subtitle:result[0]['home_subtitle']});
+          });
 
      }
 
@@ -27,8 +31,8 @@ class TopBanner extends Component {
                <Container className="topContent">
                     <Row>
                <Col className="text-center">
-               <h1 className="topTitle">EASY LEARNING</h1>
-               <h4 className="topSubTitle">Learn Profesionally</h4>
+               <h1 className="topTitle">{this.state.title}</h1>
+               <h4 className="topSubTitle">{this.state.subtitle}</h4>
                <Button variant="primary">Learn More</Button>
                
                </Col>
