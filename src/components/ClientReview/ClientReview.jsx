@@ -3,8 +3,25 @@ import { Col, Container, Row } from 'react-bootstrap'
 import "slick-carousel/slick/slick.css" 
 import "slick-carousel/slick/slick-theme.css"
 import Slider from "react-slick";
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
 
 class ClientReview extends Component {
+
+   constructor(){
+          super();
+          this.state={
+               myData:[] 
+          }
+     }
+
+     componentDidMount(){
+          RestClient.GetRequest(AppUrl.ClientReview).then(result=>{
+               this.setState({myData:result});
+          }) 
+     }
+
+
      render() {
 
           var settings = {
@@ -48,9 +65,21 @@ class ClientReview extends Component {
              };
 
 
+       const MyList = this.state.myData;
+       const MyView = MyList.map(MyList=>{
+          
+          return    <div>
+          <Row className="text-center justify-content-center">
+               <Col lg={6} md={6} sm={12}>
+       <img className="circleImg" src={MyList.client_img} />
+       <h2 className="reviewName">{MyList.client_title}</h2>
+      <p className="reviewDescription">{MyList.client_description}</p>
 
+               </Col>
+          </Row>
+          </div>  
 
-
+          }) 
 
           return (
                <Fragment>
@@ -61,46 +90,9 @@ class ClientReview extends Component {
                <div className="reviewbottom"></div> 
 
           <Slider {...settings}>
-          <div>
-          <Row className="text-center justify-content-center">
-               <Col lg={6} md={6} sm={12}>
-       <img className="circleImg" src="https://image.freepik.com/free-photo/handsome-young-man-with-new-stylish-haircut_176420-19637.jpg" />
-       <h2 className="reviewName">Kazi Ariyan</h2>
-      <p className="reviewDescription">Hi! I'm Kazi Ariyan. I'm a web developer with a serious love for teaching I am a founder of eLe easy Learning and a passionate Web Developer, Programmer & Instructor.</p>
-
-               </Col>
-          </Row>
-          </div>
-
-          <div>
-          <Row className="text-center justify-content-center">
-               <Col lg={6} md={6} sm={12}>
-       <img className="circleImg" src="https://image.freepik.com/free-photo/portrait-white-man-isolated_53876-40306.jpg" />
-       <h2 className="reviewName">Jack Ma</h2>
-      <p className="reviewDescription">Hi! I'm Kazi Ariyan. I'm a web developer with a serious love for teaching I am a founder of eLe easy Learning and a passionate Web Developer, Programmer & Instructor.</p>
-
-               </Col>
-          </Row>
-          </div>
-
-
-
-          <div>
-          <Row className="text-center justify-content-center">
-               <Col lg={6} md={6} sm={12}>
-       <img className="circleImg" src="https://image.freepik.com/free-photo/curly-man-with-broad-smile-shows-perfect-teeth-being-amused-by-interesting-talk-has-bushy-curly-dark-hair-stands-indoor-against-white-blank-wall_273609-17092.jpg" />
-       <h2 className="reviewName">Jhon </h2>
-      <p className="reviewDescription">Hi! I'm Kazi Ariyan. I'm a web developer with a serious love for teaching I am a founder of eLe easy Learning and a passionate Web Developer, Programmer & Instructor.</p>
-
-               </Col>
-          </Row>
-          </div>
-
-
-
-
-
-
+       
+                 {MyView}
+          
 
           </Slider>
 
