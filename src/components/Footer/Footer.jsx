@@ -7,8 +7,40 @@ import {faTwitter} from '@fortawesome/free-brands-svg-icons'
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import {faPhone} from '@fortawesome/free-solid-svg-icons'
 import {BrowserRouter as Router,Switch, Route, Link} from "react-router-dom";
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
+
 
 class Footer extends Component {
+     constructor(){
+          super();
+          this.state={ 
+               address:"...",
+               email:"...",
+               phone:"...",
+               facebook:"...",
+               youtube:"...",
+               twitter:"...",
+               footer_credit:"..." 
+          }
+     }
+
+      componentDidMount(){          
+           RestClient.GetRequest(AppUrl.FooterData).then(result=>{
+               this.setState({
+                    address:result[0]['address'],
+                    email:result[0]['email'],
+                    phone:result[0]['phone'],
+                    facebook:result[0]['facebook'],
+                    youtube:result[0]['youtube'],
+                    twitter:result[0]['twitter'],
+                    footer_credit:result[0]['footer_credit'] 
+                    
+                    });
+          }) 
+     }
+
+
      render() {
           return (
                <Fragment>
@@ -18,13 +50,13 @@ class Footer extends Component {
      <h2 className="footerName text-center">Follow Us </h2>
           
           <div className="social-container">
-          <a className="facebook social" href="#">
+          <a className="facebook social" href={this.state.facebook}>
              <FontAwesomeIcon icon={faFacebook} size="2x" />  
           </a>
-          <a href="#"  className="youtube social">
+          <a href={this.state.youtube}  className="youtube social">
           <FontAwesomeIcon icon={faYoutube} size="2x" />  
           </a>
-          <a href="#"  className="twitter social">
+          <a href={this.state.twitter}  className="twitter social">
           <FontAwesomeIcon icon={faTwitter} size="2x" />  
           </a> 
           </div>
@@ -36,9 +68,9 @@ class Footer extends Component {
      <Col lg="3" md={6} sm={12} className="p-5 text-justify">
      <h2 className="footerName">Address </h2>
      <p className="footerDescription">
-          6522 Baltimore National Pike CatonsVille, Califonia USA <br></br>
-          <FontAwesomeIcon icon={faEnvelope}  /> Email : Support@ele.com<br></br>
-          <FontAwesomeIcon icon={faPhone}  /> Phone : 434343434<br></br>
+         {this.state.address} <br></br>
+          <FontAwesomeIcon icon={faEnvelope}  /> Email : {this.state.email}<br></br>
+          <FontAwesomeIcon icon={faPhone}  /> Phone : {this.state.phone}<br></br>
      </p>
      </Col>
 
@@ -61,7 +93,7 @@ class Footer extends Component {
 
 
       <Container fluid={true} className="text-center copyrightSection">
-<a className="copyrightlink" href="#">© Copyright 2016 by easy Learning, All Rights Reserved</a>
+<a className="copyrightlink" href="#">{this.state.footer_credit}</a>
                </Container>
 
 

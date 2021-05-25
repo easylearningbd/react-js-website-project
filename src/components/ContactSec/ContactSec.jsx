@@ -3,9 +3,31 @@ import { Col, Container, Form, Row,Button } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import {faPhone} from '@fortawesome/free-solid-svg-icons'
-
+import RestClient from '../../RestAPI/RestClient';
+import AppUrl from '../../RestAPI/AppUrl';
 
  class ContactSec extends Component {
+      constructor(){
+          super();
+          this.state={ 
+               address:"...",
+               email:"...",
+               phone:"..." 
+                
+          }
+     }
+
+      componentDidMount(){          
+           RestClient.GetRequest(AppUrl.FooterData).then(result=>{
+               this.setState({
+                    address:result[0]['address'],
+                    email:result[0]['email'],
+                    phone:result[0]['phone'] 
+                    
+                    });
+          }) 
+     }
+
      render() {
           return (
                <Fragment>
@@ -46,9 +68,9 @@ import {faPhone} from '@fortawesome/free-solid-svg-icons'
       <h1 className="serviceName">Discuss Now</h1>
 
       <p className="serviceDescription">
-          6522 Baltimore National Pike CatonsVille, Califonia USA <br></br>
-          <FontAwesomeIcon icon={faEnvelope}  /> Email : Support@ele.com<br></br>
-          <FontAwesomeIcon icon={faPhone}  /> Phone : 434343434<br></br>
+         {this.state.address}<br></br>
+          <FontAwesomeIcon icon={faEnvelope}  /> Email : {this.state.email}<br></br>
+          <FontAwesomeIcon icon={faPhone}  /> Phone : {this.state.phone}<br></br>
      </p>
 
                               </Col>
