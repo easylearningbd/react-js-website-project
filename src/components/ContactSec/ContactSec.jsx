@@ -28,6 +28,17 @@ import AppUrl from '../../RestAPI/AppUrl';
           }) 
      }
 
+
+     sendContact(){
+          let name = document.getElementById("name").value;
+          let email = document.getElementById("email").value;
+          let message = document.getElementById("message").value;
+          // alert(name+"/"+email+"/"+message);
+
+
+          
+     }
+
      render() {
           return (
                <Fragment>
@@ -40,22 +51,22 @@ import AppUrl from '../../RestAPI/AppUrl';
      <Form>
   <Form.Group  >
     <Form.Label>Your Name </Form.Label>
-    <Form.Control type="text" placeholder="Enter Your Name" /> 
+    <Form.Control id="name" type="text" placeholder="Enter Your Name" /> 
   </Form.Group>
 
   <Form.Group  >
     <Form.Label>Your Email </Form.Label>
-    <Form.Control type="email" placeholder="Enter Your email" /> 
+    <Form.Control id="email" type="email" placeholder="Enter Your email" /> 
   </Form.Group>
 
   <Form.Group  >
     <Form.Label>Message  </Form.Label>
-    <Form.Control as="textarea" rows={3} />
+    <Form.Control id="message" as="textarea" rows={3} />
   </Form.Group>
 
    
    
-  <Button variant="primary" type="submit">
+  <Button onClick={this.sendContact} variant="primary" >
     Submit
   </Button>
 </Form>
