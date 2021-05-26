@@ -6,6 +6,15 @@ import {faCheckSquare} from '@fortawesome/free-solid-svg-icons'
 
 
 class ProjectDetails extends Component {
+     constructor(props){
+          super();
+          this.state={
+               MyProjectId:props.id
+          }
+     }
+
+
+
      render() {
           return (
               <Fragment>
@@ -16,11 +25,11 @@ class ProjectDetails extends Component {
           <img src={projectDetails} />
      </div>
      </Col>
-
+ 
 
      <Col lg={6} md={6} sm={12} className="mt-5">
           <div className="project-details">
-             <h1 className="projectDetailsText">Education in continuing a proud tradition.</h1>  
+             <h1 className="projectDetailsText"> {this.state.MyProjectId} </h1>  
              <p className="detailsName">The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph,</p>
 
              <p className="cardSubTitle text-justify"><FontAwesomeIcon className="iconBullent" icon={faCheckSquare} /> Requirment Gathering </p>
