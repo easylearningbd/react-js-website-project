@@ -3,6 +3,8 @@ import CourseDetails from '../components/CourseDetails/CourseDetails'
 import Footer from '../components/Footer/Footer'
 import PageTop from '../components/PageTop/PageTop'
 import TopNavigation from '../components/TopNavigation/TopNavigation'
+import AppUrl from '../RestAPI/AppUrl'
+import RestClient from '../RestAPI/RestClient'
 
  class CourseDetailsPage extends Component {
 
@@ -19,7 +21,7 @@ import TopNavigation from '../components/TopNavigation/TopNavigation'
      componentDidMount(){
           window.scroll(0,0)
 
-
+           
           RestClient.GetRequest(AppUrl.CourseDetails+this.state.MyCourseId).then(result=>{
                this.setState({CourseData:result});
           }) 
