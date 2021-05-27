@@ -31,7 +31,7 @@ componentDidMount(){
     <Card.Title className="serviceName">{MyList.project_name}</Card.Title>
     <Card.Text className="serviceDescription">{MyList.project_description}
     </Card.Text>
-    <Button variant="primary"><Link className="link-style" to={"/projectdetails/"+MyList.id}> View More </Link>  </Button>
+    <Button variant="primary"><Link className="link-style"  to={"/projectdetails/"+MyList.id+"/"+MyList.project_name}> View More </Link>  </Button>
   </Card.Body>
 </Card>
                              </Col>
