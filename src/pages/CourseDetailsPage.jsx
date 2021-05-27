@@ -12,6 +12,7 @@ import RestClient from '../RestAPI/RestClient'
           super();
           this.state={
                MyCourseId:match.params.courseID,
+               CorusePassedName:match.params.courseName,
                CourseData:[]
                
           }
@@ -32,7 +33,7 @@ import RestClient from '../RestAPI/RestClient'
           return (
                 <Fragment>
                      <TopNavigation title="Course Details " />  
-                     <PageTop pagetitle="Course Details" /> 
+                     <PageTop pagetitle={this.state.CorusePassedName} /> 
                      <CourseDetails courseallData={this.state.CourseData} />
                      <Footer />
                 </Fragment>
