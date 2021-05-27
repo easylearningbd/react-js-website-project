@@ -35,7 +35,7 @@ class AllCourses extends Component {
                   <Col lg={6} md={6} sm={12}>
        <h5 className="text-justify serviceName">{MyList.short_title}  </h5>
       <p className="text-justify serviceDescription">{MyList.short_description}</p>
-      <Link className="courseViewMore float-left" to="/coursedetails" >View Details</Link>
+      <Link className="courseViewMore float-left" to={"/coursedetails/"+MyList.id} >View Details</Link>
                   </Col> 
    
                   </Row> 
