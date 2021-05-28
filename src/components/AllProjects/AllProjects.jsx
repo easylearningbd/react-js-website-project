@@ -3,22 +3,28 @@ import { Card, Col, Container, Row, Button } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
+import Loading from '../Loading/Loading';
 
 class AllProjects extends Component {
   constructor(){
     super();
     this.state={
-         myData:[] 
+         myData:[],
+         loading:true
     }
 }
 
 componentDidMount(){
     RestClient.GetRequest(AppUrl.ProjectAll).then(result=>{
-         this.setState({myData:result});
+         this.setState({myData:result,loading:false});
     }) 
 }
 
      render() {
+          if(this.state.loading == true){
+               return <Loading />
+          }
+          else{ 
 
        const MyList = this.state.myData;
        const MyView = MyList.map(MyList=>{
@@ -54,6 +60,7 @@ componentDidMount(){
                </Container>
           </Fragment>
           )
+        } // end Else
      }
 }
 
