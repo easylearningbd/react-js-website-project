@@ -3,22 +3,29 @@ import { Col, Container, Row } from 'react-bootstrap'
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import ReactHtmlParser from 'react-html-parser';
+import Loading from '../Loading/Loading';
 
  class TremsDescription extends Component {
         constructor(){
           super();
           this.state={ 
-               tremsdesc:"..."
+               tremsdesc:"...",
+               loading:true
           }
      }
 
       componentDidMount(){          
            RestClient.GetRequest(AppUrl.Information).then(result=>{
-               this.setState({tremsdesc:result[0]['trems']});
+               this.setState({tremsdesc:result[0]['trems'],loading:false});
           }) 
      }
 
      render() {
+          if(this.state.loading == true){
+               return <Loading />
+          }
+          else{ 
+
           return (
               <Fragment>
                    <Container>
@@ -39,6 +46,7 @@ import ReactHtmlParser from 'react-html-parser';
                    </Container>
               </Fragment>
           )
+        } // end Else
      }
 }
 

@@ -3,23 +3,30 @@ import { Col, Container, Row } from 'react-bootstrap'
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import ReactHtmlParser from 'react-html-parser';
+import Loading from '../Loading/Loading';
 
  class PrivacyDescription extends Component {
       constructor(){
           super();
           this.state={ 
-               privacydesc:"..."
+               privacydesc:"...",
+               loading:true
           }
      }
 
       componentDidMount(){          
            RestClient.GetRequest(AppUrl.Information).then(result=>{
-               this.setState({privacydesc:result[0]['privacy']});
+               this.setState({privacydesc:result[0]['privacy'],loading:false});
           }) 
      }
 
 
      render() {
+          if(this.state.loading == true){
+               return <Loading />
+          }
+          else{ 
+
           return (
                <Fragment>
                     <Container className="mt-5">
@@ -39,6 +46,7 @@ import ReactHtmlParser from 'react-html-parser';
                     </Container>
                </Fragment>
           )
+        } // end Else
      }
 }
 

@@ -5,14 +5,16 @@ import {faEnvelope} from '@fortawesome/free-solid-svg-icons'
 import {faPhone} from '@fortawesome/free-solid-svg-icons'
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
+import Loading from '../Loading/Loading';
 
  class ContactSec extends Component {
       constructor(){
-          super();
+          super(); 
           this.state={ 
                address:"...",
                email:"...",
-               phone:"..." 
+               phone:"...",
+               loading:true 
                 
           }
      }
@@ -22,7 +24,8 @@ import AppUrl from '../../RestAPI/AppUrl';
                this.setState({
                     address:result[0]['address'],
                     email:result[0]['email'],
-                    phone:result[0]['phone'] 
+                    phone:result[0]['phone'],
+                    loading:false 
                     
                     });
           }) 
@@ -45,6 +48,11 @@ import AppUrl from '../../RestAPI/AppUrl';
      }
 
      render() {
+          if(this.state.loading == true){
+               return <Loading />
+          }
+          else{ 
+
           return (
                <Fragment>
                     <Container className="mt-5">
@@ -94,6 +102,7 @@ import AppUrl from '../../RestAPI/AppUrl';
                     </Container>
                </Fragment>
           )
+        } // end Else
      }
 }
 

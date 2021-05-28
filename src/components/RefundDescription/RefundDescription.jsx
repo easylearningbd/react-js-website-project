@@ -3,22 +3,29 @@ import { Col, Container, Row } from 'react-bootstrap'
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import ReactHtmlParser from 'react-html-parser';
-
+import Loading from '../Loading/Loading';
 class RefundDescription extends Component {
      constructor(){
           super();
           this.state={ 
-               refunddesc:"..."
+               refunddesc:"...",
+               loading:true
           }
      }
 
       componentDidMount(){          
            RestClient.GetRequest(AppUrl.Information).then(result=>{
-               this.setState({refunddesc:result[0]['refund']});
+               this.setState({refunddesc:result[0]['refund'],loading:false});
           }) 
      }
 
      render() {
+          if(this.state.loading == true){
+               return <Loading />
+          }
+          else{
+
+
           return (
 <Fragment>
      <Container className="mt-5">
@@ -38,6 +45,7 @@ class RefundDescription extends Component {
 </Fragment>
 
           )
+       } // end Else
      }
 }
 
