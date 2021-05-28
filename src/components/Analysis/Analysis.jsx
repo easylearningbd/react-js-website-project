@@ -4,6 +4,7 @@ import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis } from 'recharts';
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import ReactHtmlParser from 'react-html-parser';
+import Loading from '../Loading/Loading';
 
 class Analysis extends Component {
 
@@ -11,13 +12,14 @@ class Analysis extends Component {
           super();
           this.state={
                data:[],
-               techdesc:"..."
+               techdesc:"...",
+               loading:true
           }
      }
 
       componentDidMount(){
           RestClient.GetRequest(AppUrl.ChartData).then(result=>{
-               this.setState({data:result});
+               this.setState({data:result,loading:false});
           }) 
            RestClient.GetRequest(AppUrl.HomeTechDesc).then(result=>{
                this.setState({techdesc:result[0]['tech_description']});
@@ -27,6 +29,11 @@ class Analysis extends Component {
 
 
      render() {
+          if(this.state.loading == true){
+               return <Loading />
+          }
+          else{ 
+
           var blue = "#051b35"
           return (
                 <Fragment>
@@ -63,6 +70,7 @@ class Analysis extends Component {
 
                 </Fragment>
           )
+       } // end Else
      }
 }
 

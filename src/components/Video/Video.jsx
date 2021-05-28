@@ -7,6 +7,7 @@ import { Player, BigPlayButton } from 'video-react'
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import ReactHtmlParser from 'react-html-parser';
+import Loading from '../Loading/Loading';
 
 class Video extends Component {
 
@@ -15,7 +16,8 @@ class Video extends Component {
           this.state={
                show:false,
                video_desciption:"",
-               video_url:"" 
+               video_url:"",
+               loading:true 
           }
      }
 
@@ -24,7 +26,8 @@ class Video extends Component {
            RestClient.GetRequest(AppUrl.HomeVideo).then(result=>{
                this.setState({
                     video_desciption:result[0]['video_desciption'],
-                    video_url:result[0]['video_url'] 
+                    video_url:result[0]['video_url'],
+                    loading:false 
                     
                     });
           }) 
@@ -35,6 +38,11 @@ class Video extends Component {
 
 
      render() {
+          if(this.state.loading == true){
+               return <Loading />
+          }
+          else{ 
+
           return (
               <Fragment>
                    <Container className="text-center">
@@ -80,6 +88,7 @@ class Video extends Component {
 
               </Fragment>
           )
+       } // end Else
      }
 }
 
