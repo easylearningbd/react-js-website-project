@@ -540,3 +540,7 @@ a.twitter{
       font-size: 22px;
       position: relative;
  }
+ .LoaderAnimation{
+      width: 140px;
+      height: 140px;
+ }
