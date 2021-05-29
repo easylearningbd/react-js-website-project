@@ -4,7 +4,8 @@ import axios from 'axios';
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
-
+import Fade from 'react-reveal/Fade';
+import Jump from 'react-reveal/Jump';
 class TopBanner extends Component {
 
      constructor(){
@@ -40,8 +41,10 @@ class TopBanner extends Component {
                          </Col>
 
                <Col className={this.state.mainDivClass}>
+               <Fade top>
                <h1 className="topTitle">{this.state.title}</h1>
                <h4 className="topSubTitle">{this.state.subtitle}</h4>
+               </Fade>
                <Button variant="primary">Learn More</Button>
                
                </Col>
