@@ -4,19 +4,28 @@ import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../Loading/Loading';
+import WentWrong from '../WentWrong/WentWrong';
 
 class AboutDescription extends Component {
       constructor(){
           super();
           this.state={ 
                aboutdesc:"...",
-               loading:true
+               loading:true,
+               error:false
           }
      }
 
       componentDidMount(){          
            RestClient.GetRequest(AppUrl.Information).then(result=>{
-               this.setState({aboutdesc:result[0]['about'],loading:false});
+
+               if(result == null){
+                    this.setState({error:true,loading:false})
+               }else{
+                this.setState({aboutdesc:result[0]['about'],loading:false});
+               }              
+          }).catch(error=>{
+               this.setState({error:true})
           }) 
      }
 
@@ -25,7 +34,7 @@ class AboutDescription extends Component {
           if(this.state.loading == true){
                return <Loading />
           }
-          else{ 
+          else if(this.state.loading == false){ 
 
           return (
                <Fragment>
@@ -42,6 +51,9 @@ class AboutDescription extends Component {
                </Fragment>
           )
        } // end Else
+       else if(this.state.error == true){
+            return <WentWrong />
+          } // end if for error 
      }
 }
 

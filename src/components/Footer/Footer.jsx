@@ -10,7 +10,7 @@ import {BrowserRouter as Router,Switch, Route, Link} from "react-router-dom";
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
-
+import WentWrong from '../WentWrong/WentWrong';
 class Footer extends Component {
      constructor(){
           super();
@@ -23,12 +23,17 @@ class Footer extends Component {
                twitter:"...",
                footer_credit:"...",
                loaderClass:"p-5 text-justify",
-               mainDivClass:"d-none"
+               mainDivClass:"d-none",
+               error:false
           }
      }
 
       componentDidMount(){          
            RestClient.GetRequest(AppUrl.FooterData).then(result=>{
+               if(result == null){
+                    this.setState({error:true})
+               }else{
+
                this.setState({
                     address:result[0]['address'],
                     email:result[0]['email'],
@@ -40,11 +45,16 @@ class Footer extends Component {
                     mainDivClass:"p-5 text-justify" 
                     
                     });
-          }) 
+               } // end else for error 
+          }).catch(error=>{
+               this.setState({error:true})
+          })  
      }
 
 
      render() {
+          if(this.state.error == false){
+
           return (
                <Fragment>
       <Container fluid={true} className="footerSection">
@@ -103,15 +113,15 @@ class Footer extends Component {
                </Container>
 
 
-
-
-
-
-
+ 
 
 
                </Fragment>
           )
+          } // end if error conditon 
+          else if(this.state.error == true){
+               return <WentWrong />
+             } // end if for error 
      }
 }
 

@@ -4,26 +4,36 @@ import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../Loading/Loading';
+import WentWrong from '../WentWrong/WentWrong';
+
 class RefundDescription extends Component {
      constructor(){
           super();
           this.state={ 
                refunddesc:"...",
-               loading:true
+               loading:true,
+               error:false
           }
      }
 
       componentDidMount(){          
            RestClient.GetRequest(AppUrl.Information).then(result=>{
+               if(result == null){
+                    this.setState({error:true,loading:false})
+               }else{
+                    
                this.setState({refunddesc:result[0]['refund'],loading:false});
-          }) 
+              } // end else
+          }).catch(error=>{
+               this.setState({error:true})
+          })   
      }
 
      render() {
           if(this.state.loading == true){
                return <Loading />
           }
-          else{
+          else if(this.state.loading == false){
 
 
           return (
@@ -46,6 +56,9 @@ class RefundDescription extends Component {
 
           )
        } // end Else
+       else if(this.state.error == true){
+          return <WentWrong />
+        } // end if for error 
      }
 }
 
