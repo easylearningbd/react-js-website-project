@@ -9,7 +9,7 @@ import {faPhone} from '@fortawesome/free-solid-svg-icons'
 import {BrowserRouter as Router,Switch, Route, Link} from "react-router-dom";
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
-
+import Loading from '../Loading/Loading';
 
 class Footer extends Component {
      constructor(){
@@ -21,7 +21,9 @@ class Footer extends Component {
                facebook:"...",
                youtube:"...",
                twitter:"...",
-               footer_credit:"..." 
+               footer_credit:"...",
+               loaderClass:"p-5 text-justify",
+               mainDivClass:"d-none"
           }
      }
 
@@ -34,7 +36,8 @@ class Footer extends Component {
                     facebook:result[0]['facebook'],
                     youtube:result[0]['youtube'],
                     twitter:result[0]['twitter'],
-                    footer_credit:result[0]['footer_credit'] 
+                    footer_credit:result[0]['footer_credit'],loaderClass:"d-none",
+                    mainDivClass:"p-5 text-justify" 
                     
                     });
           }) 
@@ -64,8 +67,11 @@ class Footer extends Component {
      </Col>
 
 
+          <Col className={this.state.loaderClass}>
+          <Loading/>
+          </Col>
 
-     <Col lg="3" md={6} sm={12} className="p-5 text-justify">
+     <Col lg="3" md={6} sm={12} className={this.state.mainDivClass}>
      <h2 className="footerName">Address </h2>
      <p className="footerDescription">
          {this.state.address} <br></br>
