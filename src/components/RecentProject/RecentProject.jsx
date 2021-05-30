@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
-
+import Zoom from 'react-reveal/Zoom';
 class RecentProject extends Component {
   constructor(){
           super();
@@ -32,7 +32,7 @@ class RecentProject extends Component {
        const MyView = MyList.map(MyList=>{
           
           return  <Col lg={4} md={6} sm={12}>
-                              
+         <Zoom top>                    
      <Card className="projectCard">
   <Card.Img variant="top" src={MyList.img_one} />
   <Card.Body>
@@ -42,6 +42,7 @@ class RecentProject extends Component {
     <Button variant="primary"><Link className="link-style" to={"/projectdetails/"+MyList.id+"/"+MyList.project_name}> View More </Link>  </Button>
   </Card.Body>
 </Card>
+</Zoom> 
                              </Col>
 
           })

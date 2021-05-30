@@ -6,6 +6,7 @@ import Slider from "react-slick";
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
+import Zoom from 'react-reveal/Zoom';
 
 class ClientReview extends Component {
 
@@ -77,9 +78,11 @@ class ClientReview extends Component {
           return    <div>
           <Row className="text-center justify-content-center">
                <Col lg={6} md={6} sm={12}>
+               <Zoom top>
        <img className="circleImg" src={MyList.client_img} />
        <h2 className="reviewName">{MyList.client_title}</h2>
       <p className="reviewDescription">{MyList.client_description}</p>
+      </Zoom>
 
                </Col>
           </Row>

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
-
+import Zoom from 'react-reveal/Zoom';
 class Courses extends Component {
 
      constructor(){
@@ -34,13 +34,15 @@ class Courses extends Component {
           return  <Col lg={6} md={12} sm={12}>
               <Row>
                <Col lg={6} md={6} sm={12} className="p-2" >
+               <Zoom top>
      <img className="courseImg" src= {MyList.small_img} />
-
+     </Zoom>
                </Col>
 
                <Col lg={6} md={6} sm={12}>
+               <Zoom top>
     <h5 className="text-justify serviceName">{MyList.short_title}  </h5>
-   <p className="text-justify serviceDescription">{MyList.short_description}</p>
+   <p className="text-justify serviceDescription">{MyList.short_description}</p> </Zoom>
    <Link className="courseViewMore float-left" to={"/coursedetails/"+MyList.id+"/"+MyList.short_title} >View Details</Link>
                </Col> 
 

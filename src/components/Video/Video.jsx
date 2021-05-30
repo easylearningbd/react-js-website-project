@@ -8,7 +8,7 @@ import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../Loading/Loading';
-
+import Zoom from 'react-reveal/Zoom';
 class Video extends Component {
 
      constructor(){
@@ -50,10 +50,11 @@ class Video extends Component {
                <div className="bottom"></div>
                         <Row>
              <Col lg={6} md={6} sm={12} className="videText">
-       <p className="serviceDescription text-justify">
-     
+      
+             <Zoom top>
+       <p className="serviceDescription text-justify">    
      { ReactHtmlParser(this.state.video_desciption) }
-                              </p>
+                              </p> </Zoom>
                              </Col>
 
 

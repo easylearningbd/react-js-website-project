@@ -2,8 +2,9 @@ import React, { Component, Fragment } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import face from '../../asset/image/face.png';
 import { init } from 'ityped'
-
-
+import Zoom from 'react-reveal/Zoom';
+import Flip from 'react-reveal/Flip';
+import RubberBand from 'react-reveal/RubberBand';
 class AboutMe extends Component {
 
      componentDidMount(){
@@ -16,15 +17,21 @@ class AboutMe extends Component {
           return (
                <Fragment>
                     <Container className="text-center">
+                    <RubberBand>
              <h1 className="serviceMainTitle">ABOUT ME</h1>
+             </RubberBand>
                <div className="bottom"></div>
                          <Row>
 
 
      <Col lg={6} md={6} sm={12}>
+     <Flip top>
           <div className="aboutMeImage">
+          <Zoom top>
      <img className="aboutImg" src={face} />
+     </Zoom>
      </div>
+     </Flip>
      </Col>
 
 

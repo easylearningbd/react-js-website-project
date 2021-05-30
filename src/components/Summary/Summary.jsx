@@ -7,7 +7,7 @@ import {faLaptop} from '@fortawesome/free-solid-svg-icons'
 import {faStar} from '@fortawesome/free-solid-svg-icons'
 import CountUp from 'react-countup'
 import VisibilitySensor from 'react-visibility-sensor'
-
+import Zoom from 'react-reveal/Zoom';
 class Summary extends Component {
      render() {
           return (
@@ -21,6 +21,7 @@ class Summary extends Component {
      <Col lg={8} md={6} sm={12}>
           <Row className="countSection">
                <Col>
+               <Zoom top>
                <FontAwesomeIcon className="iconProject" icon={faGlobe} />
                <h1 className="countNumber">
                
@@ -31,12 +32,13 @@ class Summary extends Component {
       </VisibilitySensor>   
   )}
 </CountUp>  
- </h1> 
+ </h1> </Zoom>
                <h4 className="countTitle">Students Worldwide</h4>
                <hr className="bg-white w-25" />
                </Col>
 
                <Col>
+               <Zoom top>
                <FontAwesomeIcon className="iconProject" icon={faLaptop} />
                <h1 className="countNumber">
                <CountUp start={0} end={22}>
@@ -46,12 +48,13 @@ class Summary extends Component {
       </VisibilitySensor>   
   )}
 </CountUp>  
-               </h1>
+               </h1></Zoom>
                <h4 className="countTitle">Courses Published</h4>
                <hr className="bg-white w-25" />
                </Col>
 
                <Col>
+               <Zoom top>
                <FontAwesomeIcon className="iconProject" icon={faStar} />
                <h1 className="countNumber">
                <CountUp start={0} end={3000}>
@@ -60,7 +63,7 @@ class Summary extends Component {
       <span ref={countUpRef} />
       </VisibilitySensor>   
   )}
-</CountUp>   </h1>
+</CountUp>   </h1> </Zoom>
                <h4 className="countTitle">Student Reviews</h4>
                <hr className="bg-white w-25" />
                </Col>

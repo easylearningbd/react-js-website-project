@@ -5,6 +5,8 @@ import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../Loading/Loading';
+import LightSpeed from 'react-reveal/LightSpeed';
+import Zoom from 'react-reveal/Zoom';
 
 class Analysis extends Component {
 
@@ -38,7 +40,9 @@ class Analysis extends Component {
           return (
                 <Fragment>
      <Container className="text-center">
+     <LightSpeed top>
      <h1 className="serviceMainTitle">TECHNOLOGY USED</h1>
+     </LightSpeed>
                <div className="bottom"></div>
           <Row>
            <Col style={{width:'100%', height:'300px'}} lg={6} md={12} sm={12}>
@@ -60,9 +64,11 @@ class Analysis extends Component {
 
                
                <Col lg={6} md={12} sm={12}>
-     <p className="text-justify serviceDescription"> 
+               <Zoom top>
+     <p className="text-justify serviceDescription">     
      { ReactHtmlParser(this.state.techdesc) }
      </p>
+     </Zoom>
                </Col>
           </Row>
      </Container>
