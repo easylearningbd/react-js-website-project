@@ -548,3 +548,10 @@ a.twitter{
      width: 180px;
      height: 180px;
 }
+.notfound{ 
+     color: #051b35;      
+     font-family: 'Montserrat',sans-serif;
+     font-weight: 700;
+     font-size: 50px;
+
+}

@@ -1,11 +1,13 @@
 import React, { Component, Fragment } from 'react'
 import {BrowserRouter as Router,Switch, Route, Link} from "react-router-dom";
+import NotFound from '../components/NotFound/NotFound';
 import AboutPage from '../pages/AboutPage';
 import AllCorusePage from '../pages/AllCorusePage';
 import AllServicePage from '../pages/AllServicePage';
 import ContactPage from '../pages/ContactPage';
 import CourseDetailsPage from '../pages/CourseDetailsPage';
 import HomePage from '../pages/HomePage';
+import PageNotFound from '../pages/PageNotFound';
 import PortfolioPage from '../pages/PortfolioPage';
 import PrivacyPage from '../pages/PrivacyPage';
 import ProjectDetailPage from '../pages/ProjectDetailPage';
@@ -32,6 +34,7 @@ class AppRouter extends Component {
           <Route exact path="/projectdetails/:projectID/:projectName" component={ProjectDetailPage} />
           <Route exact path="/coursedetails/:courseID/:courseName" component={CourseDetailsPage} />
 
+          <Route component={PageNotFound} />
            
         </Switch>
 
