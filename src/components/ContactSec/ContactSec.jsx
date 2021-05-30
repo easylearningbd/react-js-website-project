@@ -6,7 +6,7 @@ import {faPhone} from '@fortawesome/free-solid-svg-icons'
 import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
-
+import Zoom from 'react-reveal/Zoom';
  class ContactSec extends Component {
       constructor(){
           super(); 
@@ -58,6 +58,7 @@ import Loading from '../Loading/Loading';
                     <Container className="mt-5">
                          <Row>
                               <Col lg={6} md={6} sm={12}>
+                              <Zoom left>
      <h1 className="serviceName">Quick Connect</h1>
 
  
@@ -83,12 +84,14 @@ import Loading from '../Loading/Loading';
     Submit
   </Button>
 </Form>
+</Zoom>
 
                               </Col>
 
 
 
                               <Col lg={6} md={6} sm={12}>
+                              <Zoom right>
       <h1 className="serviceName">Discuss Now</h1>
 
       <p className="serviceDescription">
@@ -96,7 +99,7 @@ import Loading from '../Loading/Loading';
           <FontAwesomeIcon icon={faEnvelope}  /> Email : {this.state.email}<br></br>
           <FontAwesomeIcon icon={faPhone}  /> Phone : {this.state.phone}<br></br>
      </p>
-
+     </Zoom>
                               </Col>
                          </Row>
                     </Container>

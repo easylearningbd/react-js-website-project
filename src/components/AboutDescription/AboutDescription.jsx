@@ -5,7 +5,8 @@ import AppUrl from '../../RestAPI/AppUrl';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../Loading/Loading';
 import WentWrong from '../WentWrong/WentWrong';
-
+import Zoom from 'react-reveal/Zoom';
+import RubberBand from 'react-reveal/RubberBand';
 class AboutDescription extends Component {
       constructor(){
           super();
@@ -42,9 +43,9 @@ class AboutDescription extends Component {
                          <Row>
                               <Col sm={12} lg={12} md={12}>
 
-
+                              <Zoom top>
               { ReactHtmlParser(this.state.aboutdesc) }
-
+              </Zoom>
                               </Col>
                          </Row>
                     </Container>

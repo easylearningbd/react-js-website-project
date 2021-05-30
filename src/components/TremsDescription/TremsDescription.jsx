@@ -5,6 +5,8 @@ import AppUrl from '../../RestAPI/AppUrl';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../Loading/Loading';
 import WentWrong from '../WentWrong/WentWrong';
+import Zoom from 'react-reveal/Zoom';
+import RubberBand from 'react-reveal/RubberBand';
 
  class TremsDescription extends Component {
         constructor(){
@@ -40,15 +42,18 @@ import WentWrong from '../WentWrong/WentWrong';
                    <Container>
                         <Row>
                         <Col lg={12} md={12} sm={12}>
+                        <RubberBand>
        <h1 className="serviceName">Trems And Condition</h1>
+       </RubberBand>
                     <hr />
+                    <Zoom top>
      <p className="serviceDescription">
          
 
          { ReactHtmlParser(this.state.tremsdesc) }
 
 
-     </p>
+     </p></Zoom>
 
                </Col>
                         </Row>

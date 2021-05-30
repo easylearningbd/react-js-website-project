@@ -5,6 +5,8 @@ import AppUrl from '../../RestAPI/AppUrl';
 import ReactHtmlParser from 'react-html-parser';
 import Loading from '../Loading/Loading';
 import WentWrong from '../WentWrong/WentWrong';
+import Zoom from 'react-reveal/Zoom';
+import RubberBand from 'react-reveal/RubberBand';
 
 class RefundDescription extends Component {
      constructor(){
@@ -41,13 +43,16 @@ class RefundDescription extends Component {
      <Container className="mt-5">
           <Row>
                <Col lg={12} md={12} sm={12}>
+               <RubberBand>
        <h1 className="serviceName">Data Protection Principles</h1>
+       </RubberBand>
                     <hr />
+                    <Zoom top>
      <p className="serviceDescription">
           
 { ReactHtmlParser(this.state.refunddesc) }
 
-     </p>
+     </p></Zoom>
 
                </Col>
           </Row>

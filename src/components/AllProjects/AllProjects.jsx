@@ -5,6 +5,7 @@ import RestClient from '../../RestAPI/RestClient';
 import AppUrl from '../../RestAPI/AppUrl';
 import Loading from '../Loading/Loading';
 import WentWrong from '../WentWrong/WentWrong';
+import Zoom from 'react-reveal/Zoom';
 
 class AllProjects extends Component {
   constructor(){
@@ -38,7 +39,7 @@ componentDidMount(){
        const MyView = MyList.map(MyList=>{
           
           return  <Col lg={4} md={6} sm={12}>
-                              
+        <Zoom top>                    
      <Card className="projectCard">
   <Card.Img variant="top" src={MyList.img_one} />
   <Card.Body>
@@ -48,6 +49,7 @@ componentDidMount(){
     <Button variant="primary"><Link className="link-style"  to={"/projectdetails/"+MyList.id+"/"+MyList.project_name}> View More </Link>  </Button>
   </Card.Body>
 </Card>
+</Zoom>   
                              </Col>
 
           })
